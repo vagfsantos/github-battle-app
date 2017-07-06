@@ -161,5 +161,5 @@ gulp.task('dev-js', tasks.js(
 ));
 
 gulp.task('default', function(){
-    runSequence('clean', 'copy', 'dev-js', 'dev-css', 'watch', 'dev-server');
+    runSequence('clean', 'dev-copy', 'dev-js', 'dev-css', 'watch', 'dev-server');
 });
