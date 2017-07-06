@@ -1,0 +1,19 @@
+{
+  "name": "github-batlle",
+  "version": "1.0.0",
+  "description": "comp:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vagfsantos/github-batlle.git"
+  },
+  "author": "Vagner santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vagfsantos/github-batlle/issues"
+  },
+  "homepage": "https://github.com/vagfsantos/github-batlle#readme"
+}
