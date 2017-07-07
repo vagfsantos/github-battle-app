@@ -4,6 +4,7 @@
     
     View.init = function(){
         this.getUserHandler();
+        this.fightHandler();
     };
     
 })(window.GithubBattle);

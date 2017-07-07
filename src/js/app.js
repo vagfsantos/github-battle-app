@@ -4,6 +4,7 @@
     window.GithubBattle = {
         _utils: {
             DOM: {
+                body: $('body'),
                 userInfo: $('.js--user-info'),
                 userMatch: $('.js--user-match'),
                 userForm: $('.js--user-form'),
