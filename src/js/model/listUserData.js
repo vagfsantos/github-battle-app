@@ -3,7 +3,7 @@
     var Data = (app._data || (app._data = {}));
 
     Data._headers = {
-        Authorization: 'token 6090f3ff58b521c9cc2ff778d66cf613b9a50b03'
+        //Authorization: 'token '
     };
 
     Data.getUser = function(userName, handler){
