@@ -16,50 +16,50 @@
                     <p>Compare 2 github profile account. Let's see who's gonna win this battle.</p>
                 </div>
             </section><!-- / PAGE HEADER-->
-            
+
             <!--SELECT USERS FORM-->
             <section class="container">
+                <div class="col-md-8 col-md-offset-2">
+                    <form class="js--user-form">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Choose your competitors</h3>
+                            </div>
 
-                <form class="js--user-form">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Choose your competitors</h3>
+                            <div class="panel-body">
+                                <fieldset class="col-md-6">
+                                    <div class="input-group">
+                                        <label for="user1" class="input-group-addon">github user 1</label>
+                                        <input id="user1" name="user1" type="text" class="form-control" placeholder="The github username" required>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="col-md-6">
+                                    <div class="input-group">
+                                        <label for="user2" class="input-group-addon">github user 2</label>
+                                        <input id="user2" name="user2" type="text" class="form-control" placeholder="The github username" required>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="panel-footer">
+                                <button type="submit" class="btn btn-primary">Show Competitors</button>
+                                <button type="reset" class="btn btn-warning">reset</button>
+                            </div>
                         </div>
 
-                        <div class="panel-body">
-                            <fieldset class="col-md-6">
-                                <div class="input-group">
-                                    <label for="user1" class="input-group-addon">github user 1</label>
-                                    <input id="user1" name="user1" type="text" class="form-control" placeholder="The github username" required>
-                                </div>
-                            </fieldset>
-                            
-                            <fieldset class="col-md-6">
-                                <div class="input-group">
-                                    <label for="user2" class="input-group-addon">github user 2</label>
-                                    <input id="user2" name="user2" type="text" class="form-control" placeholder="The github username" required>
-                                </div>
-                            </fieldset>
-                        </div>
-                        
-                        <div class="panel-footer">
-                            <button type="submit" class="btn btn-primary">Show Competitors</button>
-                            <button type="reset" class="btn btn-warning">reset</button>
-                        </div>
-                    </div>
-                    
-                </form>
-
+                    </form>
+                </div>
             </section><!-- / SELECT USERS FORM-->
-            
+
             <section class="container">
-                <div class="js--user-info"></div>
+                <div class="col-md-8 col-md-offset-2 js--user-info"></div>
             </section>
-            
+
             <section class="container">
-                <div class="js--user-match"></div>
+                <div class="col-md-8 col-md-offset-2 js--user-match"></div>
             </section>
-            
+
             <div class="js--alert alert-container"></div>
         </main>
 
