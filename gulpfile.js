@@ -142,8 +142,8 @@ gulp.task('clean', tasks.clean(['./dist', './build']));
 */
 gulp.task('server', tasks.server('./dist'));
 gulp.task('copy', tasks.copy('./src/*.html', './dist'));
-gulp.task('css', tasks.css(['./src/scss/**/*.scss'], './dist/css'));
-gulp.task('js', tasks.js(utils.jsOrder, './dist/js/'));
+gulp.task('css', tasks.css('dist', ['./src/scss/**/*.scss'], './dist/css'));
+gulp.task('js', tasks.js('dist', utils.jsOrder, './dist/js/'));
 
 gulp.task('dist', function(){
     runSequence('clean', 'copy', 'js', 'css', 'server');
