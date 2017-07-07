@@ -24,20 +24,22 @@
                 $.ajax( finalUrl , {
                     headers: Data._headers,
                     error: function(data){
-                        console.log(data);
+                        handlerCallback.onError(data);
                     },
                     success: function(data){
+                        count += data.reduce(function(prev, next){
+                            return prev + next.stargazers_count;
+                        }, 0);
+                        
                         if( data.length && data.length ==  per_page){
-                            count += data.length;
+                            getRepos(++page, per_page);
                         }else{
-                            count += data.length;
-                            
                             // all repos has been verified
-                            score[i].repos = count;
-                            var allCompertitorReady = !score.filter(function(user){ return user.repos; }).length;
+                            score[i].stars = count;
+                            var allCompertitorReady = score.filter(function(user){ return user.stars !== undefined; }).length == 2;
                             
                             if(  allCompertitorReady ){
-                                handlerCallback.done(score);
+                                handlerCallback.onSuccess(score);
                             }
                         }
                     }

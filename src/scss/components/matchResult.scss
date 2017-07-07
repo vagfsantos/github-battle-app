@@ -1,0 +1,17 @@
+.match-result{
+    margin: 20px 0;
+    
+    .well{
+        &.win{
+            background-color: #c3f58a;
+        }
+        
+        &.lose{
+            background-color: #f58a8a;
+        }
+        
+        &.tie{
+            background-color: #f5d98a;
+        }
+    }
+}
