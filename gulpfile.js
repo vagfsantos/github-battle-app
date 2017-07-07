@@ -112,7 +112,14 @@ var utils = {
 
 	alert: function(msg){
 		gulp.src('./src').pipe(notify(msg));
-	}
+	},
+    jsOrder: [
+        './src/js/libs/**/*.js',
+        './src/js/app.js',
+        './src/js/control/**/*.js',
+        './src/js/model/**/*.js',
+        './src/js/view/**/*.js',
+    ]
 };
 
 
@@ -136,10 +143,7 @@ gulp.task('clean', tasks.clean(['./dist', './build']));
 gulp.task('server', tasks.server('./dist'));
 gulp.task('copy', tasks.copy('./src/*.html', './dist'));
 gulp.task('css', tasks.css(['./src/scss/**/*.scss'], './dist/css'));
-gulp.task('js', tasks.js(
-    ['./src/js/libs/**/*.js', './src/js/model/**/*.js', './src/js/view/**/*.js', './src/js/control/**/*.js', './src/js/app.js'],
-    './dist/js/'
-));
+gulp.task('js', tasks.js(utils.jsOrder, './dist/js/'));
 
 gulp.task('dist', function(){
     runSequence('clean', 'copy', 'js', 'css', 'server');
@@ -154,11 +158,7 @@ gulp.task('dist', function(){
 gulp.task('dev-server', tasks.server('./build'));
 gulp.task('dev-copy', tasks.copy('./src/*.html', './build'));
 gulp.task('dev-css', tasks.css('dev', ['./src/scss/**/*.scss'], './build/css'));
-gulp.task('dev-js', tasks.js(
-    'dev', 
-    ['./src/js/libs/**/*.js', './src/js/model/**/*.js', './src/js/view/**/*.js', './src/js/control/**/*.js', './src/js/app.js'],
-    './build/js/'
-));
+gulp.task('dev-js', tasks.js('dev', utils.jsOrder,'./build/js/'));
 
 gulp.task('default', function(){
     runSequence('clean', 'dev-copy', 'dev-js', 'dev-css', 'watch', 'dev-server');
