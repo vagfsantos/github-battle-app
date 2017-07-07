@@ -11,7 +11,7 @@
             },
             
             emptyUserData: function(){
-                $('.js--user-info')
+                this.DOM.userInfo.add( this.DOM.userMatch ).empty();
             }
         },
         

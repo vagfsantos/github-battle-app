@@ -3,19 +3,19 @@
     var Data = (app._data || (app._data = {}));
 
     var cache = {
-        lastUsers: {}
+        lastUsers: []
     };
     
     Data.clearUsers = function(){
-        cache.lastUsers = {};
+        cache.lastUsers = [];
     }
     
-    Data.setLastUser = function(name, data){
-        cache.lastUsers[name] = data;
+    Data.setLastUser = function(data){
+        cache.lastUsers.push(data);
     }
     
     Data.getLastUsers = function(name, data){
-        return cache;
+        return cache.lastUsers;
     }
 
 })(window.GithubBattle);

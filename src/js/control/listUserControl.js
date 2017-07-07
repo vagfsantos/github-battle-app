@@ -19,8 +19,15 @@
                 },
                 onSuccess: function(userData){
                     // save last user data
-                    app._data.setLastUser(user.value, userData);
                     console.log(userData);
+                    app._data.setLastUser(userData);
+                    
+                    var competitors = app._data.getLastUsers();
+                    
+                    // we've got 2 valid user's data
+                    if( competitors.length == 2 ){
+                        app._view.listUser(competitors);
+                    }
                 }
             });
         });
