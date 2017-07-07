@@ -11,7 +11,7 @@
                     <div class="caption">\
                         <p>Name: '+ (user.name || 'Not avaiable') +'</p>\
                         <p>Public repos: '+ user.public_repos +'</p>\
-                        <p><a target="_blank" href="'+user.url+'" class="btn btn-primary">profile</a></p>\
+                        <p><a target="_blank" href="http://github.com/'+user.login+'" class="btn btn-primary">profile</a></p>\
                     <div>\
                 </div>\
             </div>\
