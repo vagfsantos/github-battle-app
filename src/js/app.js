@@ -6,7 +6,8 @@
             DOM: {
                 userInfo: $('.js--user-info'),
                 userMatch: $('.js--user-match'),
-                userForm: $('.js--user-form')
+                userForm: $('.js--user-form'),
+                alert: $('.js--alert')
             },
             
             emptyUserData: function(){
