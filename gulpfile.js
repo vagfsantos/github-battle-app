@@ -71,15 +71,15 @@ var tasks = {
     watch: function(){
         return function(){
             var html = gulp.watch('./src/*.html', function(){
-                runSequence('copy', 'reload');
+                runSequence('dev-copy', 'reload');
             });
             
             var js = gulp.watch('./src/js/**/*.js', function(){
-                runSequence('js', 'reload');
+                runSequence('dev-js', 'reload');
             });
             
             var css = gulp.watch('./src/scss/**/*.scss', function(){
-                runSequence('css', 'reload');
+                runSequence('dev-css', 'reload');
             });
             
             html.on('change', function(event) {
@@ -124,6 +124,7 @@ var utils = {
 */
 gulp.task('reload', tasks.reload());
 gulp.task('watch', tasks.watch());
+gulp.task('clean', tasks.clean(['./dist', './build']));
 
 
 
@@ -134,7 +135,6 @@ gulp.task('watch', tasks.watch());
 */
 gulp.task('server', tasks.server('./dist'));
 gulp.task('copy', tasks.copy('./src/*.html', './dist'));
-gulp.task('clean', tasks.clean('./dist'));
 gulp.task('css', tasks.css(['./src/scss/**/*.scss'], './dist/css'));
 gulp.task('js', tasks.js(
     ['./src/js/libs/**/*.js', './src/js/model/**/*.js', './src/js/view/**/*.js', './src/js/control/**/*.js', './src/js/app.js'],
@@ -142,7 +142,7 @@ gulp.task('js', tasks.js(
 ));
 
 gulp.task('dist', function(){
-    runSequence('clean', 'copy', 'js', 'css', 'watch', 'server');
+    runSequence('clean', 'copy', 'js', 'css', 'server');
 });
 
 
